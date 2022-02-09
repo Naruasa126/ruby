@@ -1,21 +1,17 @@
-# トリボナッチ
-puts "求めたい数字を入力して下さい"
-puts "１つ目の数字"
-a = gets.to_i
-puts "２つ目の数字"
-b = gets.to_i
-puts "３つ目の数字"
-c = gets.to_i
-puts "何番目の数字を求めますか？"
-t = gets.to_i
+def findthird
+  num = 1
+  while (num <= 3000) do
+    if (num % 3 == 0 || num.to_s.include?("3"))
+      #3の倍数とは、数字を3で割りき切れる数字なので「%3」
+      #3のつく数字はnumの数を文字列に変換し、「to_s」、
+      #指定した文字列"3"が含まれている場合にtrueを返す条件を加える。「.include?("3")」
+      puts "#{ num } ☆"
+    else
+      puts num
+    end
 
-n = 0
-while n < (t - 3)
-  d = a + b + c
-  a = b
-  b = c
-  c = d
-  n += 1
+    num = num + 1
+  end
 end
 
-puts "です"
+findthird
